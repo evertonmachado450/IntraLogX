@@ -3,36 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terceirização, Treinamento e Consultoria Logística | Soluções Operacionais</title>
-    <meta name="description" content="Especialistas em terceirização logística, treinamento de operadores, conferentes e líderes, segurança do trabalho e consultoria de processos para centros de distribuição.">
-    <meta name="keywords" content="terceirização logística, serviços logísticos terceirizados, operador logístico terceirizado, treinamento logístico, treinamento de conferentes, formação de líderes logísticos, segurança logística, boas práticas logísticas, consultoria logística, gestão de operações logísticas, melhoria de processos logísticos">
-    <meta name="robots" content="index, follow">
+
+    <title>LOGSOLUTIONS | Logística e Automação 4.0</title>
+
+    <meta name="description"
+          content="LOGSOLUTIONS - Soluções em logística, automação de movimentação interna, armazéns inteligentes, ASRS e integração CLP, sensores e atuadores.">
 
     <style>
-        /* ==========================================================================
-           1. RESET, VARIÁVEIS E IDENTIDADE VISUAL
-           ========================================================================== */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, Roboto, sans-serif;
-        }
-
-        :root {
-            --primary-dark: #0a192f;    
-            --primary: #1e3a8a;         
-            --primary-accent: #3b82f6;  
-            --orange-accent: #f97316;   
-            --orange-hover: #ea580c;    
-            --bg-light: #f8fafc;        
-            --bg-white: #ffffff;
-            --text-main: #0f172a;       
-            --text-muted: #475569;      
-            --text-light: #94a3b8;      
-            --border-color: #e2e8f0;
-            --shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
-            --transition: all 0.3s ease;
         }
 
         html {
@@ -40,1200 +21,1766 @@
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-main);
+            font-family: Arial, Helvetica, sans-serif;
+            color: #172033;
+            background: #f7f9fc;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        /* ==========================================================================
-           2. NAVEGAÇÃO E CABEÇALHO
-           ========================================================================== */
-        header {
-            background-color: var(--primary-dark);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            border-bottom: 2px solid rgba(249, 115, 22, 0.3);
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 2rem;
-        }
-
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--bg-white);
+        a {
             text-decoration: none;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .logo span {
-            color: var(--orange-accent);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.8rem;
-            align-items: center;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--bg-white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--orange-accent);
-        }
-
-        .btn-header {
-            background-color: var(--orange-accent);
-            color: var(--bg-white);
-            padding: 0.7rem 1.4rem;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.25);
-        }
-
-        .btn-header:hover {
-            background-color: var(--orange-hover);
-            transform: translateY(-2px);
-        }
-
-        /* ==========================================================================
-           3. HERO SECTION
-           ========================================================================== */
-        .hero {
-            background: linear-gradient(135deg, rgba(10, 25, 47, 0.95) 0%, rgba(30, 58, 138, 0.88) 100%), 
-                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-            color: var(--bg-white);
-            padding: 7rem 2rem 6rem;
-            position: relative;
-        }
-
-        .hero-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3.2rem;
-            line-height: 1.15;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-
-        .hero-content h1 span {
-            color: var(--orange-accent);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-        }
-
-        .hero-btns {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background-color: var(--orange-accent);
-            color: var(--bg-white);
-            padding: 1rem 2rem;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-            box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--orange-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--bg-white);
-            padding: 1rem 2rem;
-            border-radius: 6px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            transition: var(--transition);
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--bg-white);
-            background-color: rgba(255, 255, 255, 0.05);
-        }
-
-        .hero-quick-form {
-            background: var(--bg-white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            color: var(--text-main);
-            border-top: 5px solid var(--orange-accent);
-        }
-
-        .hero-quick-form h3 {
-            font-size: 1.4rem;
-            color: var(--primary-dark);
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-        }
-
-        .hero-quick-form p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 0.9rem 1rem;
-            margin-bottom: 1rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 0.95rem;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            border-color: var(--primary-accent);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
-        }
-
-        /* ==========================================================================
-           4. ESTRUTURA GERAL DAS SEÇÕES
-           ========================================================================== */
-        .section-padding {
-            padding: 6rem 2rem;
+            color: inherit;
         }
 
         .container {
-            max-width: 1280px;
-            margin: 0 auto;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            background: #071a33;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,.15);
+        }
+
+        .nav {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #19c37d;
+        }
+
+        nav {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #19c37d;
+        }
+
+        .nav-btn {
+            background: #19c37d;
+            padding: 11px 18px;
+            border-radius: 8px;
+            color: #071a33;
+        }
+
+        .nav-btn:hover {
+            background: #13a968;
+            color: white;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 680px;
+            display: flex;
+            align-items: center;
+            color: white;
+            background:
+                linear-gradient(90deg, rgba(4,20,40,.96), rgba(4,20,40,.78)),
+                url("https://images.unsplash.com/photo-1586528116493-da8b4c7d3f0c?auto=format&fit=crop&w=1800&q=80")
+                center/cover;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .tag {
+            display: inline-block;
+            color: #19c37d;
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 68px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #19c37d;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #d9e2ee;
+            margin-bottom: 35px;
+            max-width: 680px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 800;
+            transition: .3s;
+        }
+
+        .btn-primary {
+            background: #19c37d;
+            color: #071a33;
+        }
+
+        .btn-primary:hover {
+            background: #13a968;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #071a33;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 90px 0;
         }
 
         .section-header {
+            max-width: 760px;
+            margin: 0 auto 50px;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto 4rem;
         }
 
-        .section-tag {
-            color: var(--orange-accent);
-            font-weight: 800;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            margin-bottom: 0.5rem;
-            display: block;
+        .section-header .tag {
+            margin-bottom: 8px;
         }
 
-        .section-title {
-            font-size: 2.3rem;
-            color: var(--primary-dark);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-            letter-spacing: -0.5px;
+        .section-header h2 {
+            font-size: 40px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+            color: #071a33;
         }
 
-        .section-description {
-            color: var(--text-muted);
-            font-size: 1.1rem;
+        .section-header p {
+            color: #64748b;
+            font-size: 17px;
         }
 
-        /* ==========================================================================
-           5. SOBRE NÓS E PILARES
-           ========================================================================== */
+        /* =========================
+           SOBRE
+        ========================= */
+
         .about {
-            background-color: var(--bg-white);
+            background: white;
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 60px;
             align-items: center;
-            margin-bottom: 5rem;
         }
 
-        .about-image img {
-            width: 100%;
+        .about h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .about p {
+            color: #64748b;
+            margin-bottom: 18px;
+        }
+
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .pillar {
+            background: #f1f5f9;
+            padding: 20px;
             border-radius: 12px;
-            box-shadow: var(--shadow);
-            object-fit: cover;
-            height: 420px;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            color: var(--primary-dark);
-            margin-bottom: 1.2rem;
+            text-align: center;
             font-weight: 800;
         }
 
-        .about-text p {
-            color: var(--text-muted);
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
+        .pillar span {
+            display: block;
+            font-size: 30px;
+            margin-bottom: 8px;
         }
 
-        .manifesto-box {
-            background: var(--bg-light);
-            border-left: 4px solid var(--orange-accent);
-            padding: 1.5rem;
-            border-radius: 0 8px 8px 0;
-            font-weight: 700;
-            color: var(--primary-dark);
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
+        /* =========================
+           SOLUÇÕES
+        ========================= */
+
+        .solutions {
+            background: #f7f9fc;
         }
 
-        .pillars-title {
-            text-align: center;
-            font-size: 1.6rem;
-            color: var(--primary-dark);
-            margin-bottom: 2.5rem;
-            font-weight: 800;
-        }
-
-        .pillars-grid {
+        .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .pillar-card {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            padding: 2rem 1.5rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: var(--transition);
-        }
-
-        .pillar-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-accent);
-            background: var(--bg-white);
-            box-shadow: var(--shadow);
-        }
-
-        .pillar-icon {
-            font-size: 2rem;
-            color: var(--orange-accent);
-            margin-bottom: 1rem;
-            font-weight: bold;
-        }
-
-        .pillar-card h4 {
-            color: var(--primary-dark);
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        /* ==========================================================================
-           6. SOLUÇÕES (SERVIÇOS TERCEIRIZADOS)
-           ========================================================================== */
-        .solutions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
         }
 
         .card {
-            background: var(--bg-white);
-            border-radius: 10px;
-            padding: 2.5rem 2rem;
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow);
-            transition: var(--transition);
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(15, 23, 42, .07);
+            transition: .3s;
+            border: 1px solid #e8edf3;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(15, 23, 42, .12);
+        }
+
+        .icon {
+            width: 58px;
+            height: 58px;
+            border-radius: 12px;
+            background: #e5fff3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #64748b;
+        }
+
+        /* =========================
+           AUTOMAÇÃO 4.0
+        ========================= */
+
+        .automation {
+            background: #071a33;
+            color: white;
             position: relative;
             overflow: hidden;
         }
 
-        .card::before {
-            content: '';
+        .automation::before {
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--primary-dark);
-            transition: var(--transition);
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            background: rgba(25,195,125,.12);
+            right: -180px;
+            top: -180px;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
+        .automation .section-header h2 {
+            color: white;
         }
 
-        .card:hover::before {
-            background: var(--orange-accent);
+        .automation .section-header p {
+            color: #b8c5d5;
         }
 
-        .card-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--primary-accent);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-        }
-
-        .card h3 {
-            font-size: 1.35rem;
-            color: var(--primary-dark);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .card-list {
-            list-style: none;
-        }
-
-        .card-list li {
-            position: relative;
-            padding-left: 1.4rem;
-            margin-bottom: 0.6rem;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .card-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--orange-accent);
-            font-weight: bold;
-        }
-
-        /* ==========================================================================
-           7. TREINAMENTOS OPERACIONAIS
-           ========================================================================== */
-        .trainings {
-            background-color: var(--primary-dark);
-            color: var(--bg-white);
-        }
-
-        .trainings .section-title {
-            color: var(--bg-white);
-        }
-
-        .trainings .section-description {
-            color: var(--text-light);
-        }
-
-        .training-structure {
+        .automation-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            position: relative;
+            z-index: 2;
         }
 
-        .training-card {
-            background: #1e293b;
-            padding: 2rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: var(--transition);
+        .automation-card {
+            border: 1px solid rgba(255,255,255,.12);
+            background: rgba(255,255,255,.05);
+            padding: 32px;
+            border-radius: 15px;
+            transition: .3s;
         }
 
-        .training-card:hover {
-            border-color: var(--orange-accent);
+        .automation-card:hover {
+            border-color: #19c37d;
             transform: translateY(-5px);
+            background: rgba(25,195,125,.08);
         }
 
-        .training-card h3 {
-            color: var(--orange-accent);
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
+        .automation-card .icon {
+            background: rgba(25,195,125,.15);
         }
 
-        .training-card p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 1.2rem;
+        .automation-card h3 {
+            font-size: 23px;
+            margin-bottom: 12px;
         }
 
-        .training-details {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 1rem;
+        .automation-card p {
+            color: #c5d0dd;
         }
 
-        .training-details span {
-            display: block;
-            font-size: 0.85rem;
-            color: var(--bg-white);
-            margin-bottom: 0.3rem;
+        .automation-card ul {
+            margin-top: 15px;
+            padding-left: 20px;
+            color: #c5d0dd;
         }
 
-        .training-cta-box {
-            background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border: 1px solid rgba(249, 115, 22, 0.4);
-            padding: 3rem;
-            border-radius: 12px;
-            text-align: center;
+        .automation-card li {
+            margin-bottom: 7px;
         }
 
-        .training-cta-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+        /* =========================
+           ASRS DESTAQUE
+        ========================= */
+
+        .asrs {
+            background: white;
         }
 
-        .training-cta-box p {
-            color: var(--text-light);
-            max-width: 650px;
-            margin: 0 auto 2rem;
-        }
-
-        /* ==========================================================================
-           8. SEGURANÇA E CONSULTORIA
-           ========================================================================== */
-        .safety {
-            background-color: var(--bg-white);
-        }
-
-        .safety-grid {
+        .asrs-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 60px;
             align-items: center;
         }
 
-        .safety-list {
-            list-style: none;
-            margin-top: 1.5rem;
+        .asrs-box {
+            background: linear-gradient(135deg, #071a33, #103b65);
+            color: white;
+            padding: 45px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(7,26,51,.2);
         }
 
-        .safety-list li {
-            margin-bottom: 1rem;
+        .asrs-box .big-icon {
+            font-size: 65px;
+            margin-bottom: 20px;
+        }
+
+        .asrs-box h3 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .asrs-box p {
+            color: #d1dbe7;
+        }
+
+        .benefits {
+            display: grid;
+            gap: 18px;
+        }
+
+        .benefit {
             display: flex;
+            gap: 15px;
             align-items: flex-start;
-            gap: 1rem;
         }
 
-        .safety-icon {
-            background: rgba(249, 115, 22, 0.1);
-            color: var(--orange-accent);
+        .check {
             min-width: 32px;
             height: 32px;
             border-radius: 50%;
+            background: #19c37d;
+            color: #071a33;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
         }
 
-        .safety-list strong {
-            color: var(--primary-dark);
-            display: block;
+        .benefit h4 {
+            margin-bottom: 4px;
         }
 
-        .safety-list p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        .benefit p {
+            color: #64748b;
         }
 
-        .consulting-process {
+        /* =========================
+           CLP
+        ========================= */
+
+        .clp {
+            background: #eef5f8;
+        }
+
+        .clp-flow {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 1.5rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            align-items: center;
         }
 
-        .step-card {
-            background: var(--bg-light);
-            padding: 1.5rem 1rem;
-            border-radius: 8px;
+        .flow-box {
+            background: white;
+            padding: 25px 15px;
+            border-radius: 12px;
             text-align: center;
-            border: 1px solid var(--border-color);
+            box-shadow: 0 5px 20px rgba(0,0,0,.05);
         }
 
-        .step-number {
-            width: 36px;
-            height: 36px;
-            background: var(--primary-dark);
-            color: var(--bg-white);
+        .flow-box strong {
+            display: block;
+            margin-top: 10px;
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 25px;
+            color: #19c37d;
+            font-weight: bold;
+        }
+
+        /* =========================
+           DIFERENCIAL
+        ========================= */
+
+        .differential {
+            background: white;
+        }
+
+        .differential-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .metric {
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+        }
+
+        .metric strong {
+            display: block;
+            font-size: 38px;
+            color: #19c37d;
+        }
+
+        .metric span {
+            color: #64748b;
+        }
+
+        /* =========================
+           PROCESSO
+        ========================= */
+
+        .process {
+            background: #f7f9fc;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+        }
+
+        .process-step {
+            text-align: center;
+        }
+
+        .number {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 15px;
+            background: #071a33;
+            color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            font-weight: 800;
-            font-size: 0.9rem;
+            font-weight: bold;
+            font-size: 18px;
         }
 
-        .step-card h4 {
-            font-size: 1rem;
-            color: var(--primary-dark);
-            font-weight: 700;
+        .process-step h4 {
+            font-size: 15px;
         }
 
-        /* ==========================================================================
-           9. INDICADORES (KPIs)
-           ========================================================================== */
-        .indicators {
-            background-color: var(--bg-light);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
+        /* =========================
+           FORMULÁRIO
+        ========================= */
 
-        .indicators-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .kpi-card {
-            background: var(--bg-white);
-            padding: 2rem 1.5rem;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            text-align: center;
-            box-shadow: var(--shadow);
-        }
-
-        .kpi-tag {
-            display: inline-block;
-            background: rgba(30, 58, 138, 0.1);
-            color: var(--primary);
-            font-size: 0.8rem;
-            font-weight: 800;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            margin-bottom: 1rem;
-        }
-
-        .kpi-card h4 {
-            font-size: 1.2rem;
-            color: var(--primary-dark);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .kpi-card p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* ==========================================================================
-           10. FORMULÁRIO DE CONTATO
-           ========================================================================== */
         .contact {
-            background-color: var(--bg-white);
+            background: #071a33;
+            color: white;
         }
 
-        .contact-box {
-            background: var(--bg-light);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 3.5rem;
-            box-shadow: var(--shadow);
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .8fr 1.2fr;
+            gap: 60px;
+            align-items: start;
         }
 
-        .contact-form-grid {
+        .contact h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #b9c7d8;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            margin: 15px 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #19c37d;
+        }
+
+        form {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            color: #172033;
+        }
+
+        .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: 15px;
         }
 
-        .contact-form-grid .full-width {
-            grid-column: span 2;
+        .form-group {
+            margin-bottom: 15px;
         }
 
-        .contact-form-grid label {
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
             display: block;
-            font-size: 0.9rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 0.4rem;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 6px;
         }
 
-        /* ==========================================================================
-           11. CHAMADA FINAL E RODAPÉ
-           ========================================================================== */
-        .final-cta {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            color: var(--bg-white);
-            text-align: center;
-            padding: 5rem 2rem;
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #d5dce5;
+            border-radius: 7px;
+            font-family: inherit;
+            outline: none;
         }
 
-        .final-cta h2 {
-            font-size: 2.3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #19c37d;
         }
 
-        .final-cta p {
-            color: var(--text-light);
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
+        textarea {
+            min-height: 120px;
+            resize: vertical;
         }
+
+        .submit {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
-            background-color: #060e1a;
-            color: var(--bg-white);
-            padding: 4rem 2rem 2rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            background: #041326;
+            color: #b8c5d5;
+            padding: 45px 0;
         }
 
         .footer-grid {
-            max-width: 1280px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr repeat(3, 1fr);
-            gap: 3rem;
-            margin-bottom: 3rem;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
         }
 
-        .footer-brand p {
-            color: var(--text-light);
-            margin-top: 1rem;
-            font-size: 0.95rem;
-            max-width: 320px;
+        footer h3 {
+            color: white;
+            margin-bottom: 12px;
         }
 
-        .footer-col h4 {
-            color: var(--orange-accent);
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-        }
-
-        .footer-col ul {
+        footer ul {
             list-style: none;
         }
 
-        .footer-col ul li {
-            margin-bottom: 0.6rem;
+        footer li {
+            margin-bottom: 8px;
         }
 
-        .footer-col ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: var(--transition);
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,.1);
+            margin-top: 35px;
+            padding-top: 20px;
+            font-size: 13px;
         }
 
-        .footer-col ul li a:hover {
-            color: var(--bg-white);
-        }
+        /* =========================
+           RESPONSIVO
+        ========================= */
 
-        .footer-bottom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-            color: var(--text-light);
-            font-size: 0.85rem;
-        }
+        @media (max-width: 900px) {
 
-        /* Botão Flutuante WhatsApp ajustado para o número informado */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
-            z-index: 2000;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: #128c7e;
-        }
-
-        @media (max-width: 992px) {
-            .hero-container, .about-grid, .safety-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
+            nav {
                 display: none;
             }
-            .contact-form-grid {
+
+            .about-grid,
+            .asrs-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
             }
-            .contact-form-grid .full-width {
-                grid-column: span 1;
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
             }
-            .contact-box {
-                padding: 2rem 1.5rem;
+
+            .automation-grid {
+                grid-template-columns: 1fr;
             }
+
+            .differential-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .clp-flow {
+                grid-template-columns: 1fr;
+            }
+
+            .arrow {
+                transform: rotate(90deg);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                min-height: 620px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-header h2,
+            .about h2,
+            .contact h2 {
+                font-size: 32px;
+            }
+
+            .cards,
+            .pillars,
+            .differential-grid,
+            .process-grid,
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
             .footer-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
+
 <body>
 
-    <a href="https://wa.me/5551994171746?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informações." class="whatsapp-float" target="_blank" aria-label="Contato via WhatsApp">
-        &#128172;
-    </a>
+<!-- =========================
+     HEADER
+========================= -->
 
-    <header>
-        <div class="nav-container">
-            <a href="#" class="logo">LOG<span>SOLUTIONS</span></a>
-            <ul class="nav-links">
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#solucoes">Soluções</a></li>
-                <li><a href="#treinamentos">Treinamentos</a></li>
-                <li><a href="#seguranca">Segurança</a></li>
-                <li><a href="#consultoria">Consultoria</a></li>
-                <li><a href="#indicadores">Indicadores</a></li>
-            </ul>
-            <a href="#contato" class="btn-header">Solicitar Proposta</a>
-        </div>
-    </header>
+<header>
+    <div class="container nav">
 
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Transformamos operações logísticas em <span>resultados</span>.</h1>
-                <p>Terceirização, treinamento e desenvolvimento de equipes para operações mais produtivas, seguras e eficientes.</p>
-                <div class="hero-btns">
-                    <a href="#contato" class="btn-primary">Solicite uma Proposta</a>
-                    <a href="#solucoes" class="btn-secondary">Conheça Nossas Soluções</a>
-                </div>
+        <a href="#inicio" class="logo">
+            LOG<span>SOLUTIONS</span>
+        </a>
+
+        <nav>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#solucoes">Soluções</a>
+            <a href="#automacao">Automação 4.0</a>
+            <a href="#asrs">ASRS</a>
+            <a href="#indicadores">Indicadores</a>
+            <a href="#contato" class="nav-btn">Solicitar Proposta</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="inicio">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <span class="tag">
+                Logística • Automação • Indústria 4.0
+            </span>
+
+            <h1>
+                Transformamos operações logísticas em
+                <span>resultados.</span>
+            </h1>
+
+            <p>
+                Integramos pessoas, processos e tecnologias para criar
+                operações logísticas mais produtivas, seguras e inteligentes.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#contato" class="btn btn-primary">
+                    Solicite um Projeto
+                </a>
+
+                <a href="#automacao" class="btn btn-outline">
+                    Conheça a Automação 4.0
+                </a>
+
             </div>
-            <div class="hero-quick-form">
-                <h3>Agende um Diagnóstico</h3>
-                <p>Receba uma avaliação preliminar para a sua operação.</p>
-                <form id="heroQuickForm">
-                    <input type="text" id="quickName" class="form-control" placeholder="Seu Nome" required>
-                    <input type="email" id="quickEmail" class="form-control" placeholder="E-mail Corporativo" required>
-                    <input type="tel" id="quickPhone" class="form-control" placeholder="WhatsApp / Telefone" required>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Solicitar Contato Técnico</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <section class="section-padding about" id="sobre">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="Gestão Logística em CD">
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOBRE
+========================= -->
+
+<section class="about" id="sobre">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div>
+
+                <span class="tag">
+                    Quem Somos
+                </span>
+
+                <h2>
+                    Engenharia aplicada à logística.
+                </h2>
+
+                <p>
+                    A LOGSOLUTIONS atua no desenvolvimento de soluções
+                    para operações logísticas, combinando conhecimento
+                    operacional, engenharia e tecnologias de automação.
+                </p>
+
+                <p>
+                    Nosso objetivo é identificar gargalos, eliminar
+                    desperdícios e desenvolver processos mais eficientes,
+                    seguros e preparados para os desafios da Indústria 4.0.
+                </p>
+
+                <p>
+                    Trabalhamos desde a melhoria dos processos existentes
+                    até a implantação de soluções de automação e
+                    movimentação interna.
+                </p>
+
+            </div>
+
+            <div class="pillars">
+
+                <div class="pillar">
+                    <span>👥</span>
+                    Pessoas
                 </div>
-                <div class="about-text">
-                    <span class="section-tag">Sobre Nossa Atuação</span>
-                    <h3>Especialistas em Operações e Desenvolvimento de Pessoas</h3>
-                    <p>Atuamos de forma estratégica na terceirização de serviços logísticos e na capacitação contínua de equipes de alto desempenho.</p>
-                    <p>Nosso foco vai além de suprir demanda de mão de obra: estruturamos processos padronizados, reduzimos gargalos operacionais e promovemos uma cultura firme de segurança e qualidade.</p>
-                    <div class="manifesto-box">
-                        “Não entregamos apenas mão de obra. Entregamos pessoas preparadas, processos padronizados e operações orientadas para resultados.”
+
+                <div class="pillar">
+                    <span>⚙️</span>
+                    Processos
+                </div>
+
+                <div class="pillar">
+                    <span>🤖</span>
+                    Automação
+                </div>
+
+                <div class="pillar">
+                    <span>📊</span>
+                    Dados
+                </div>
+
+                <div class="pillar">
+                    <span>🛡️</span>
+                    Segurança
+                </div>
+
+                <div class="pillar">
+                    <span>🚀</span>
+                    Inovação
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOLUÇÕES
+========================= -->
+
+<section class="solutions" id="solucoes">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="tag">
+                Nossas Soluções
+            </span>
+
+            <h2>
+                Soluções integradas para operações modernas
+            </h2>
+
+            <p>
+                Unimos conhecimento logístico e tecnologia para aumentar
+                produtividade, controle e eficiência.
+            </p>
+
+        </div>
+
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">📦</div>
+
+                <h3>
+                    Terceirização Logística
+                </h3>
+
+                <p>
+                    Equipes capacitadas para operações de recebimento,
+                    armazenagem, picking, packing e expedição.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">📋</div>
+
+                <h3>
+                    Consultoria de Processos
+                </h3>
+
+                <p>
+                    Mapeamento de processos, identificação de gargalos,
+                    redução de desperdícios e melhoria contínua.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🎓</div>
+
+                <h3>
+                    Treinamentos
+                </h3>
+
+                <p>
+                    Capacitação de operadores, conferentes e líderes
+                    para operações mais produtivas e seguras.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">📊</div>
+
+                <h3>
+                    Indicadores Logísticos
+                </h3>
+
+                <p>
+                    Gestão de produtividade, acuracidade, SLA, OTD,
+                    perdas e desempenho operacional.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🦺</div>
+
+                <h3>
+                    Segurança Operacional
+                </h3>
+
+                <p>
+                    Padronização de processos e boas práticas para
+                    redução de riscos e acidentes.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">💻</div>
+
+                <h3>
+                    Tecnologia Logística
+                </h3>
+
+                <p>
+                    Aplicação de automação, sensores, sistemas de controle
+                    e tecnologias da Indústria 4.0.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     AUTOMAÇÃO 4.0
+========================= -->
+
+<section class="automation" id="automacao">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="tag">
+                Indústria 4.0
+            </span>
+
+            <h2>
+                Automação Logística 4.0
+            </h2>
+
+            <p>
+                Desenvolvemos soluções inteligentes para automatizar
+                a movimentação, armazenagem e controle de materiais.
+            </p>
+
+        </div>
+
+
+        <div class="automation-grid">
+
+            <!-- 01 -->
+
+            <div class="automation-card">
+
+                <div class="icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Automação de Movimentação Interna
+                </h3>
+
+                <p>
+                    Automatizamos o transporte interno de materiais,
+                    reduzindo movimentações desnecessárias, erros
+                    operacionais e tempos de deslocamento.
+                </p>
+
+                <ul>
+                    <li>Transportadores automatizados</li>
+                    <li>Movimentação inteligente de cargas</li>
+                    <li>Integração entre áreas do armazém</li>
+                    <li>Otimização do fluxo de materiais</li>
+                </ul>
+
+            </div>
+
+
+            <!-- 02 -->
+
+            <div class="automation-card">
+
+                <div class="icon">
+                    🏭
+                </div>
+
+                <h3>
+                    Armazéns Inteligentes
+                </h3>
+
+                <p>
+                    Transformamos armazéns convencionais em ambientes
+                    conectados, monitorados e preparados para decisões
+                    baseadas em dados.
+                </p>
+
+                <ul>
+                    <li>Monitoramento em tempo real</li>
+                    <li>Integração com sistemas de gestão</li>
+                    <li>Controle de estoque automatizado</li>
+                    <li>Rastreabilidade dos materiais</li>
+                </ul>
+
+            </div>
+
+
+            <!-- 03 -->
+
+            <div class="automation-card">
+
+                <div class="icon">
+                    🗄️
+                </div>
+
+                <h3>
+                    Sistemas de Armazenagem Automatizada
+                </h3>
+
+                <p>
+                    Aplicação de sistemas ASRS para armazenagem e
+                    recuperação automática de produtos e componentes.
+                </p>
+
+                <ul>
+                    <li>ASRS — Automated Storage and Retrieval System</li>
+                    <li>Redução do espaço ocupado</li>
+                    <li>Maior densidade de armazenamento</li>
+                    <li>Precisão na localização dos produtos</li>
+                </ul>
+
+            </div>
+
+
+            <!-- 04 -->
+
+            <div class="automation-card">
+
+                <div class="icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Integração CLP + Sensores + Atuadores
+                </h3>
+
+                <p>
+                    Integramos sistemas de controle industrial para
+                    conectar sensores, CLPs e atuadores em uma arquitetura
+                    automatizada.
+                </p>
+
+                <ul>
+                    <li>Programação de CLP</li>
+                    <li>Sensores de presença e posição</li>
+                    <li>Motores e atuadores</li>
+                    <li>Controle automático de processos</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ASRS
+========================= -->
+
+<section class="asrs" id="asrs">
+
+    <div class="container">
+
+        <div class="asrs-grid">
+
+            <div class="asrs-box">
+
+                <div class="big-icon">
+                    🏗️
+                </div>
+
+                <h3>
+                    ASRS
+                </h3>
+
+                <p>
+                    Automated Storage and Retrieval Systems —
+                    sistemas automatizados para armazenagem e recuperação
+                    de materiais.
+                </p>
+
+                <br>
+
+                <a href="#contato" class="btn btn-primary">
+                    Solicitar Projeto
+                </a>
+
+            </div>
+
+
+            <div>
+
+                <span class="tag">
+                    Armazenagem Automatizada
+                </span>
+
+                <h2>
+                    Mais capacidade utilizando menos espaço.
+                </h2>
+
+                <div class="benefits">
+
+                    <div class="benefit">
+
+                        <div class="check">✓</div>
+
+                        <div>
+                            <h4>
+                                Maior aproveitamento vertical
+                            </h4>
+
+                            <p>
+                                Utilização inteligente do espaço disponível
+                                no armazém.
+                            </p>
+                        </div>
+
                     </div>
-                </div>
-            </div>
 
-            <h3 class="pillars-title">Nossos Pilares Estratégicos</h3>
-            <div class="pillars-grid">
-                <div class="pillar-card"><div class="pillar-icon">👤</div><h4>Pessoas</h4></div>
-                <div class="pillar-card"><div class="pillar-icon">⚙️</div><h4>Processos</h4></div>
-                <div class="pillar-card"><div class="pillar-icon">📈</div><h4>Produtividade</h4></div>
-                <div class="pillar-card"><div class="pillar-icon">🛡️</div><h4>Segurança</h4></div>
-                <div class="pillar-card"><div class="pillar-icon">🎯</div><h4>Qualidade</h4></div>
-                <div class="pillar-card"><div class="pillar-icon">🏆</div><h4>Resultado</h4></div>
-            </div>
-        </div>
-    </section>
 
-    <section class="section-padding" id="solucoes">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Soluções em Mão de Obra e Operação</span>
-                <h2 class="section-title">Terceirização de Serviços Logísticos</h2>
-                <p class="section-description">Fornecimento de equipes capacitadas para alta eficiência em centros de distribuição e armazéns.</p>
-            </div>
+                    <div class="benefit">
 
-            <div class="solutions-grid">
-                <div class="card">
-                    <div class="card-icon">📦</div>
-                    <h3>Equipes Operacionais</h3>
-                    <ul class="card-list">
-                        <li>Operadores logísticos multidisciplinares</li>
-                        <li>Conferentes especializados</li>
-                        <li>Líderes de operação e encarregados</li>
-                        <li>Auxiliares de logística</li>
-                    </ul>
-                </div>
+                        <div class="check">✓</div>
 
-                <div class="card">
-                    <div class="card-icon">🔄</div>
-                    <h3>Movimentação e Armazenagem</h3>
-                    <ul class="card-list">
-                        <li>Separação rigorosa de materiais</li>
-                        <li>Operações de Picking e Packing</li>
-                        <li>Abastecimento continuo de linhas</li>
-                        <li>Apoio tático em centros de distribuição</li>
-                    </ul>
-                </div>
+                        <div>
+                            <h4>
+                                Redução de erros
+                            </h4>
 
-                <div class="card">
-                    <div class="card-icon">📋</div>
-                    <h3>Fluxo e Controle de Estoque</h3>
-                    <ul class="card-list">
-                        <li>Recebimento e expedição estruturados</li>
-                        <li>Organização física de estoque</li>
-                        <li>Inventários cíclicos e gerais</li>
-                        <li>Tratamento de divergências</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+                            <p>
+                                Automatização da localização e recuperação
+                                dos materiais.
+                            </p>
+                        </div>
 
-    <section class="section-padding trainings" id="treinamentos">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag" style="color: var(--orange-accent);">Capacitação Profissional</span>
-                <h2 class="section-title">Treinamentos Operacionais Exclusivos</h2>
-                <p class="section-description">Programas práticos voltados para a formação de profissionais de alta performance.</p>
-            </div>
-
-            <div class="training-structure">
-                <div class="training-card">
-                    <h3>Formação de Operadores</h3>
-                    <p>Treinamento prático em movimentação, uso de coletor de dados e ergonomia.</p>
-                    <div class="training-details">
-                        <span><strong>Objetivo:</strong> Erro zero na movimentação</span>
                     </div>
-                </div>
 
-                <div class="training-card">
-                    <h3>Capacitação de Conferentes</h3>
-                    <p>Foco em acuracidade, procedimentos de entrada e saída e auditoria de carga.</p>
-                    <div class="training-details">
-                        <span><strong>Objetivo:</strong> Garantir 100% de precisão</span>
+
+                    <div class="benefit">
+
+                        <div class="check">✓</div>
+
+                        <div>
+                            <h4>
+                                Rastreabilidade
+                            </h4>
+
+                            <p>
+                                Controle das movimentações e localização
+                                dos produtos.
+                            </p>
+                        </div>
+
                     </div>
-                </div>
 
-                <div class="training-card">
-                    <h3>Formação de Líderes</h3>
-                    <p>Desenvolvimento de liderança de piso, gestão de KPIs e clima organizacional.</p>
-                    <div class="training-details">
-                        <span><strong>Objetivo:</strong> Gestão eficiente de equipes</span>
+
+                    <div class="benefit">
+
+                        <div class="check">✓</div>
+
+                        <div>
+                            <h4>
+                                Mais produtividade
+                            </h4>
+
+                            <p>
+                                Redução dos deslocamentos e dos tempos
+                                improdutivos.
+                            </p>
+                        </div>
+
                     </div>
+
                 </div>
 
-                <div class="training-card">
-                    <h3>Processos e Indicadores</h3>
-                    <p>Capacitação em inventários, controle de estoque e metodologia 5S.</p>
-                    <div class="training-details">
-                        <span><strong>Objetivo:</strong> Produtividade sustentável</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CLP
+========================= -->
+
+<section class="clp">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="tag">
+                Automação Industrial
+            </span>
+
+            <h2>
+                Integração CLP + Sensores + Atuadores
+            </h2>
+
+            <p>
+                Uma arquitetura integrada transforma sinais físicos
+                em decisões automáticas.
+            </p>
+
+        </div>
+
+
+        <div class="clp-flow">
+
+            <div class="flow-box">
+                <div style="font-size:35px;">👁️</div>
+                <strong>Sensores</strong>
+                Detectam
+                informações
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-box">
+                <div style="font-size:35px;">🧠</div>
+                <strong>CLP</strong>
+                Processa
+                informações
+            </div>
+
+            <div class="arrow">
+                →
+            </div>
+
+            <div class="flow-box">
+                <div style="font-size:35px;">⚙️</div>
+                <strong>Atuadores</strong>
+                Executam
+                ações
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     DIFERENCIAL
+========================= -->
+
+<section class="differential" id="indicadores">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="tag">
+                Nosso Diferencial
+            </span>
+
+            <h2>
+                Tecnologia para eliminar desperdícios
+            </h2>
+
+            <p>
+                Nossa abordagem combina engenharia, automação,
+                processos e indicadores para gerar eficiência.
+            </p>
+
+        </div>
+
+
+        <div class="differential-grid">
+
+            <div class="metric">
+                <strong>↓</strong>
+                <span>Movimentações desnecessárias</span>
+            </div>
+
+            <div class="metric">
+                <strong>↑</strong>
+                <span>Produtividade operacional</span>
+            </div>
+
+            <div class="metric">
+                <strong>24/7</strong>
+                <span>Monitoramento automatizado</span>
+            </div>
+
+            <div class="metric">
+                <strong>4.0</strong>
+                <span>Indústria conectada</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROCESSO
+========================= -->
+
+<section class="process">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="tag">
+                Como Trabalhamos
+            </span>
+
+            <h2>
+                Da necessidade ao resultado
+            </h2>
+
+        </div>
+
+
+        <div class="process-grid">
+
+            <div class="process-step">
+                <div class="number">1</div>
+                <h4>Diagnóstico</h4>
+            </div>
+
+            <div class="process-step">
+                <div class="number">2</div>
+                <h4>Mapeamento</h4>
+            </div>
+
+            <div class="process-step">
+                <div class="number">3</div>
+                <h4>Projeto</h4>
+            </div>
+
+            <div class="process-step">
+                <div class="number">4</div>
+                <h4>Automação</h4>
+            </div>
+
+            <div class="process-step">
+                <div class="number">5</div>
+                <h4>Implantação</h4>
+            </div>
+
+            <div class="process-step">
+                <div class="number">6</div>
+                <h4>Resultados</h4>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTATO
+========================= -->
+
+<section class="contact" id="contato">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+
+                <span class="tag">
+                    Fale Conosco
+                </span>
+
+                <h2>
+                    Sua operação pode ser mais inteligente.
+                </h2>
+
+                <p>
+                    Conte-nos sobre sua operação, seus gargalos e os
+                    desafios de movimentação ou armazenagem.
+                </p>
+
+                <p>
+                    Nossa equipe pode avaliar oportunidades de automação
+                    e desenvolver uma solução adequada à sua necessidade.
+                </p>
+
+                <div class="contact-item">
+                    <strong>WhatsApp</strong>
+                    (51) 99417-1746
+                </div>
+
+                <div class="contact-item">
+                    <strong>Atendimento</strong>
+                    Segunda a sexta-feira
+                </div>
+
+                <div class="contact-item">
+                    <strong>Área de atuação</strong>
+                    Soluções logísticas e automação
+                </div>
+
+            </div>
+
+
+            <form id="leadForm">
+
+                <h3 style="margin-bottom:20px;">
+                    Solicite um diagnóstico
+                </h3>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Nome *</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Seu nome"
+                            required>
                     </div>
-                </div>
-            </div>
 
-            <div class="training-cta-box">
-                <h3>Necessita de um Treinamento In-Company?</h3>
-                <p>Desenvolvemos conteúdos customizados de acordo com a sua operação.</p>
-                <a href="https://wa.me/5551994171746?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20treinamentos%20personalizados." target="_blank" class="btn-primary">Falar via WhatsApp (51) 99417-1746</a>
-            </div>
-        </div>
-    </section>
 
-    <section class="section-padding safety" id="seguranca">
-        <div class="container">
-            <div class="safety-grid">
-                <div>
-                    <span class="section-tag">Cultura de Prevenção</span>
-                    <h2 class="section-title">Segurança e Boas Práticas Logísticas</h2>
-                    <p class="section-description">Eliminamos riscos operacionais para proteger as pessoas e aumentar a eficiência.</p>
-                    
-                    <ul class="safety-list">
-                        <li>
-                            <div class="safety-icon">✓</div>
-                            <div>
-                                <strong>Prevenção de Acidentes</strong>
-                                <p>Treinamento em movimentação segura e uso de EPIs.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="safety-icon">✓</div>
-                            <div>
-                                <strong>Organização e Metodologia 5S</strong>
-                                <p>Manutenção de áreas limpas, desobstruídas e identificadas.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="safety-icon">✓</div>
-                            <div>
-                                <strong>Padronização de Processos (POPs)</strong>
-                                <p>Mitigação de riscos operacionais e avarias.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80" alt="Segurança Logística" style="width: 100%; border-radius: 12px; box-shadow: var(--shadow);">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding" id="consultoria" style="background: var(--bg-light);">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Consultoria Operacional</span>
-                <h2 class="section-title">Mapeamento e Melhoria de Processos</h2>
-                <p class="section-description">Identificamos gargalos e reestruturamos a operação para eliminar perdas.</p>
-            </div>
-
-            <div class="consulting-process">
-                <div class="step-card"><div class="step-number">1</div><h4>Diagnóstico</h4></div>
-                <div class="step-card"><div class="step-number">2</div><h4>Oportunidades</h4></div>
-                <div class="step-card"><div class="step-number">3</div><h4>Planejamento</h4></div>
-                <div class="step-card"><div class="step-number">4</div><h4>Implantação</h4></div>
-                <div class="step-card"><div class="step-number">5</div><h4>Treinamento</h4></div>
-                <div class="step-card"><div class="step-number">6</div><h4>Acompanhamento</h4></div>
-                <div class="step-card"><div class="step-number">7</div><h4>Resultados</h4></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding indicators" id="indicadores">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Gestão Baseada em Dados</span>
-                <h2 class="section-title">Indicadores Acompanhados</h2>
-                <p class="section-description">Estruturamos sua operação para controlar e elevar os principais KPIs logísticos.</p>
-            </div>
-
-            <div class="indicators-grid">
-                <div class="kpi-card"><span class="kpi-tag">OPERACIONAL</span><h4>Produtividade e Eficiência</h4><p>Caixas/itens por homem/hora.</p></div>
-                <div class="kpi-card"><span class="kpi-tag">ENTREGAS</span><h4>OTD e SLA</h4><p>Cumprimento de prazos e expedição.</p></div>
-                <div class="kpi-card"><span class="kpi-tag">ESTOQUE</span><h4>Acuracidade</h4><p>Alinhamento entre físico e WMS.</p></div>
-                <div class="kpi-card"><span class="kpi-tag">PESSOAS</span><h4>Absenteísmo</h4><p>Engajamento e redução de faltas.</p></div>
-                <div class="kpi-card"><span class="kpi-tag">QUALIDADE</span><h4>Redução de Perdas</h4><p>Eliminação de retrabalho e avarias.</p></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding contact" id="contato">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Fale Conosco</span>
-                <h2 class="section-title">Solicite uma Proposta Comercial</h2>
-                <p class="section-description">Preencha o formulário para enviarmos seu atendimento diretamente para o nosso WhatsApp <strong>(51) 99417-1746</strong>.</p>
-            </div>
-
-            <div class="contact-box">
-                <form id="mainContactForm">
-                    <div class="contact-form-grid">
-                        <div>
-                            <label for="name">Nome Completo *</label>
-                            <input type="text" id="name" class="form-control" placeholder="Seu nome" required>
-                        </div>
-                        <div>
-                            <label for="company">Empresa *</label>
-                            <input type="text" id="company" class="form-control" placeholder="Nome Fantasia" required>
-                        </div>
-                        <div>
-                            <label for="role">Cargo *</label>
-                            <input type="text" id="role" class="form-control" placeholder="Ex: Gerente de Logística" required>
-                        </div>
-                        <div>
-                            <label for="email">E-mail Corporativo *</label>
-                            <input type="email" id="email" class="form-control" placeholder="nome@empresa.com.br" required>
-                        </div>
-                        <div>
-                            <label for="phone">WhatsApp / Telefone *</label>
-                            <input type="tel" id="phone" class="form-control" placeholder="(51) 99417-1746" required>
-                        </div>
-                        <div>
-                            <label for="city">Cidade / Estado *</label>
-                            <input type="text" id="city" class="form-control" placeholder="Ex: Porto Alegre / RS" required>
-                        </div>
-                        <div>
-                            <label for="service">Serviço de Interesse *</label>
-                            <select id="service" class="form-control" required>
-                                <option value="">Selecione uma opção</option>
-                                <option value="Terceirização de Mão de Obra">Terceirização de Mão de Obra Logística</option>
-                                <option value="Treinamento e Capacitação">Treinamento e Capacitação de Equipes</option>
-                                <option value="Consultoria Operacional">Consultoria e Melhoria de Processos</option>
-                                <option value="Solução Integrada">Solução Integrada (Terceirização + Treinamento)</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="employees">Número de Colaboradores na Operação</label>
-                            <select id="employees" class="form-control">
-                                <option value="Até 10">Até 10 colaboradores</option>
-                                <option value="11 a 50">11 a 50 colaboradores</option>
-                                <option value="51 a 100">51 a 100 colaboradores</option>
-                                <option value="Mais de 100">Mais de 100 colaboradores</option>
-                            </select>
-                        </div>
-                        <div class="full-width">
-                            <label for="message">Mensagem ou Detalhes da Necessidade</label>
-                            <textarea id="message" class="form-control" rows="4" placeholder="Descreva brevemente sua operação e principais desafios atuais..."></textarea>
-                        </div>
-                        <div class="full-width">
-                            <button type="submit" class="btn-primary" style="width: 100%; padding: 1.2rem; font-size: 1.1rem;">Enviar Proposta via WhatsApp</button>
-                        </div>
+                    <div class="form-group">
+                        <label>Empresa *</label>
+                        <input
+                            type="text"
+                            id="empresa"
+                            placeholder="Nome da empresa"
+                            required>
                     </div>
-                </form>
-            </div>
-        </div>
-    </section>
 
-    <section class="final-cta">
-        <div class="container">
-            <h2>Sua operação pode ser mais produtiva, segura e eficiente. Vamos transformar seus processos?</h2>
-            <p>Mais do que terceirizar pessoas. Desenvolvemos operações.</p>
-            <a href="https://wa.me/5551994171746?text=Olá!%20Gostaria%20de%20falar%20com%20um%20especialista%20em%20logística." target="_blank" class="btn-primary" style="background-color: var(--bg-white); color: var(--primary-dark);">Falar com um Especialista no (51) 99417-1746</a>
-        </div>
-    </section>
 
-    <footer>
+                    <div class="form-group">
+                        <label>Cargo</label>
+                        <input
+                            type="text"
+                            id="cargo"
+                            placeholder="Ex.: Gerente de Logística">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>WhatsApp *</label>
+                        <input
+                            type="tel"
+                            id="telefone"
+                            placeholder="(51) 99999-9999"
+                            required>
+                    </div>
+
+
+                    <div class="form-group full">
+                        <label>Interesse</label>
+
+                        <select id="interesse">
+
+                            <option>
+                                Automação de movimentação interna
+                            </option>
+
+                            <option>
+                                Armazém inteligente
+                            </option>
+
+                            <option>
+                                Sistema ASRS
+                            </option>
+
+                            <option>
+                                Integração CLP + sensores + atuadores
+                            </option>
+
+                            <option>
+                                Consultoria logística
+                            </option>
+
+                            <option>
+                                Outro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group full">
+
+                        <label>
+                            Conte-nos sobre sua necessidade
+                        </label>
+
+                        <textarea
+                            id="mensagem"
+                            placeholder="Descreva brevemente seu problema ou projeto..."></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary submit">
+
+                    Enviar Solicitação via WhatsApp
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container">
+
         <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="#" class="logo">LOG<span>SOLUTIONS</span></a>
-                <p>Soluções integradas em terceirização, treinamento de equipes, segurança e consultoria operacional.</p>
+
+            <div>
+
+                <h3>LOGSOLUTIONS</h3>
+
+                <p>
+                    Soluções integradas em logística, automação,
+                    armazenagem inteligente e Indústria 4.0.
+                </p>
+
             </div>
-            <div class="footer-col">
-                <h4>Soluções</h4>
+
+
+            <div>
+
+                <h3>Soluções</h3>
+
                 <ul>
-                    <li><a href="#solucoes">Terceirização Logística</a></li>
-                    <li><a href="#treinamentos">Treinamentos Técnicos</a></li>
-                    <li><a href="#seguranca">Segurança no Armazém</a></li>
-                    <li><a href="#consultoria">Consultoria de Processos</a></li>
+                    <li>Automação logística</li>
+                    <li>Armazéns inteligentes</li>
+                    <li>ASRS</li>
+                    <li>CLP e sensores</li>
+                    <li>Consultoria</li>
                 </ul>
+
             </div>
-            <div class="footer-col">
-                <h4>Contato Direto</h4>
+
+
+            <div>
+
+                <h3>Contato</h3>
+
                 <ul>
-                    <li><a href="https://wa.me/5551994171746" target="_blank">WhatsApp: (51) 99417-1746</a></li>
-                    <li><a href="tel:5551994171746">Atendimento Telefônico</a></li>
-                    <li><a href="#contato">Enviar Formulário</a></li>
+                    <li>WhatsApp: (51) 99417-1746</li>
+                    <li>Atendimento nacional</li>
+                    <li>Segunda a sexta</li>
                 </ul>
+
             </div>
-            <div class="footer-col">
-                <h4>Atendimento</h4>
-                <ul>
-                    <li>Segunda a Sexta-feira</li>
-                    <li>Horário Comercial</li>
-                    <li>Atendimento em todo o Brasil</li>
-                </ul>
-            </div>
+
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 LOGSOLUTIONS. Todos os direitos reservados. Contato Comercial: (51) 99417-1746.</p>
+
+
+        <div class="copyright">
+
+            © 2026 LOGSOLUTIONS.
+            Todos os direitos reservados.
+
         </div>
-    </footer>
 
-    <script>
-        const targetPhone = "5551994171746";
+    </div>
 
-        // Form Rápido (Hero)
-        document.getElementById('heroQuickForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('quickName').value;
-            const email = document.getElementById('quickEmail').value;
-            const phone = document.getElementById('quickPhone').value;
+</footer>
 
-            const text = `Olá! Gostaria de agendar um diagnóstico.%0A%0A*Nome:* ${name}%0A*E-mail:* ${email}%0A*Telefone:* ${phone}`;
-            
-            window.open(`https://wa.me/${targetPhone}?text=${text}`, '_blank');
-            this.reset();
-        });
 
-        // Form Principal
-        document.getElementById('mainContactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const company = document.getElementById('company').value;
-            const role = document.getElementById('role').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const city = document.getElementById('city').value;
-            const service = document.getElementById('service').value;
-            const employees = document.getElementById('employees').value;
-            const message = document.getElementById('message').value;
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
-            const text = `Olá! Gostaria de solicitar uma proposta comercial.%0A%0A` +
-                         `*Nome:* ${name}%0A` +
-                         `*Empresa:* ${company}%0A` +
-                         `*Cargo:* ${role}%0A` +
-                         `*E-mail:* ${email}%0A` +
-                         `*Telefone:* ${phone}%0A` +
-                         `*Cidade/UF:* ${city}%0A` +
-                         `*Serviço:* ${service}%0A` +
-                         `*Nº Colaboradores:* ${employees}%0A` +
-                         `*Mensagem:* ${message}`;
+<script>
 
-            window.open(`https://wa.me/${targetPhone}?text=${text}`, '_blank');
-            this.reset();
-        });
-    </script>
+document
+.getElementById("leadForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const nome =
+        document.getElementById("nome").value;
+
+    const empresa =
+        document.getElementById("empresa").value;
+
+    const cargo =
+        document.getElementById("cargo").value;
+
+    const telefone =
+        document.getElementById("telefone").value;
+
+    const interesse =
+        document.getElementById("interesse").value;
+
+    const mensagem =
+        document.getElementById("mensagem").value;
+
+
+    const texto =
+        "Olá! Gostaria de solicitar um diagnóstico de automação logística.%0A%0A" +
+
+        "*Nome:* " + nome + "%0A" +
+
+        "*Empresa:* " + empresa + "%0A" +
+
+        "*Cargo:* " + cargo + "%0A" +
+
+        "*WhatsApp:* " + telefone + "%0A" +
+
+        "*Interesse:* " + interesse + "%0A%0A" +
+
+        "*Necessidade:* " + mensagem;
+
+
+    const numero =
+        "5551994171746";
+
+
+    window.open(
+        "https://wa.me/" +
+        numero +
+        "?text=" +
+        texto,
+        "_blank"
+    );
+
+});
+
+</script>
+
 </body>
 </html>
