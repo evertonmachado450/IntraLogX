@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Controle do LED - Arduino IoT</title>
+    <title>Controle de 3 LEDs - Arduino IoT</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Paho MQTT WebSockets Client -->
@@ -29,7 +29,7 @@
     </script>
     <style>
         .led-glow-on {
-            box-shadow: 0 0 30px #22c55e, inset 0 0 15px #4ade80;
+            box-shadow: 0 0 25px #22c55e, inset 0 0 10px #4ade80;
         }
         .led-glow-off {
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
@@ -38,7 +38,7 @@
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col items-center justify-center p-4 font-sans">
 
-    <div class="w-full max-w-md bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 p-6 space-y-6">
+    <div class="w-full max-w-lg bg-slate-800 rounded-2xl shadow-2xl border border-slate-700 p-6 space-y-6">
         
         <!-- Header -->
         <div class="flex items-center justify-between border-b border-slate-700 pb-4">
@@ -48,7 +48,7 @@
                 </div>
                 <div>
                     <h1 class="text-xl font-bold tracking-wide">Painel Arduino</h1>
-                    <p class="text-xs text-slate-400">Controle de LED - Porta 13</p>
+                    <p class="text-xs text-slate-400">Controle de 3 LEDs Independentes</p>
                 </div>
             </div>
             <!-- Status Badge -->
@@ -58,30 +58,66 @@
             </div>
         </div>
 
-        <!-- Visualizer Area -->
-        <div class="flex flex-col items-center justify-center py-6 bg-slate-900/50 rounded-xl border border-slate-700/50 space-y-4">
-            <!-- LED Circle Indicator -->
-            <div id="led-indicator" class="w-24 h-24 rounded-full bg-slate-800 border-4 border-slate-600 flex items-center justify-center transition-all duration-300 led-glow-off">
-                <i data-lucide="zap" id="led-icon" class="w-10 h-10 text-slate-600 transition-colors duration-300"></i>
+        <!-- Visualizer Area (3 LEDs) -->
+        <div class="grid grid-cols-3 gap-3 py-4 bg-slate-900/50 rounded-xl border border-slate-700/50 p-4">
+            <!-- LED 1 -->
+            <div class="flex flex-col items-center space-y-2">
+                <div id="led-indicator-1" class="w-16 h-16 rounded-full bg-slate-800 border-4 border-slate-600 flex items-center justify-center transition-all duration-300 led-glow-off">
+                    <i data-lucide="zap" id="led-icon-1" class="w-7 h-7 text-slate-600 transition-colors duration-300"></i>
+                </div>
+                <span id="led-status-1" class="text-xs font-bold text-slate-400 uppercase">LED 1 OFF</span>
             </div>
-            <div class="text-center">
-                <span id="led-status-text" class="text-sm font-medium text-slate-400 uppercase tracking-wider">LED Desligado</span>
+            <!-- LED 2 -->
+            <div class="flex flex-col items-center space-y-2">
+                <div id="led-indicator-2" class="w-16 h-16 rounded-full bg-slate-800 border-4 border-slate-600 flex items-center justify-center transition-all duration-300 led-glow-off">
+                    <i data-lucide="zap" id="led-icon-2" class="w-7 h-7 text-slate-600 transition-colors duration-300"></i>
+                </div>
+                <span id="led-status-2" class="text-xs font-bold text-slate-400 uppercase">LED 2 OFF</span>
+            </div>
+            <!-- LED 3 -->
+            <div class="flex flex-col items-center space-y-2">
+                <div id="led-indicator-3" class="w-16 h-16 rounded-full bg-slate-800 border-4 border-slate-600 flex items-center justify-center transition-all duration-300 led-glow-off">
+                    <i data-lucide="zap" id="led-icon-3" class="w-7 h-7 text-slate-600 transition-colors duration-300"></i>
+                </div>
+                <span id="led-status-3" class="text-xs font-bold text-slate-400 uppercase">LED 3 OFF</span>
             </div>
         </div>
 
-        <!-- Controls -->
-        <div class="grid grid-cols-2 gap-4">
-            <button id="btn-on" onclick="enviarComando('1')" class="flex items-center justify-center space-x-2 py-3 px-4 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-all transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
-                <i data-lucide="power" class="w-5 h-5"></i>
-                <span>LIGAR</span>
-            </button>
-            <button id="btn-off" onclick="enviarComando('0')" class="flex items-center justify-center space-x-2 py-3 px-4 bg-rose-600 hover:bg-rose-500 active:bg-rose-700 text-white font-bold rounded-xl shadow-lg transition-all transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed">
-                <i data-lucide="power-off" class="w-5 h-5"></i>
-                <span>DESLIGAR</span>
-            </button>
+        <!-- Individual Controls -->
+        <div class="space-y-3">
+            <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Controles Individuais</h2>
+            <div class="grid grid-cols-3 gap-3">
+                <button onclick="alternarLED(1)" class="flex flex-col items-center justify-center py-2.5 px-2 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-bold rounded-xl shadow transition-all transform active:scale-95">
+                    <i data-lucide="power" class="w-4 h-4 mb-1"></i>
+                    <span class="text-xs">LED 1</span>
+                </button>
+                <button onclick="alternarLED(2)" class="flex flex-col items-center justify-center py-2.5 px-2 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-bold rounded-xl shadow transition-all transform active:scale-95">
+                    <i data-lucide="power" class="w-4 h-4 mb-1"></i>
+                    <span class="text-xs">LED 2</span>
+                </button>
+                <button onclick="alternarLED(3)" class="flex flex-col items-center justify-center py-2.5 px-2 bg-sky-600 hover:bg-sky-500 active:bg-sky-700 text-white font-bold rounded-xl shadow transition-all transform active:scale-95">
+                    <i data-lucide="power" class="w-4 h-4 mb-1"></i>
+                    <span class="text-xs">LED 3</span>
+                </button>
+            </div>
         </div>
 
-        <!-- Configuration Details (Collapsible/Footer) -->
+        <!-- Global Controls -->
+        <div class="space-y-3 pt-2">
+            <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Controles Globais</h2>
+            <div class="grid grid-cols-2 gap-4">
+                <button onclick="enviarComando('A')" class="flex items-center justify-center space-x-2 py-3 px-4 bg-emerald-600 hover:bg-emerald-500 active:bg-emerald-700 text-white font-bold rounded-xl shadow-lg transition-all transform active:scale-95">
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+                    <span>LIGAR TODOS</span>
+                </button>
+                <button onclick="enviarComando('D')" class="flex items-center justify-center space-x-2 py-3 px-4 bg-rose-600 hover:bg-rose-500 active:bg-rose-700 text-white font-bold rounded-xl shadow-lg transition-all transform active:scale-95">
+                    <i data-lucide="power-off" class="w-5 h-5"></i>
+                    <span>DESLIGAR TODOS</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Configuration Details -->
         <div class="pt-4 border-t border-slate-700/60 text-xs text-slate-400 space-y-1">
             <div class="flex justify-between">
                 <span>Broker:</span>
@@ -96,22 +132,21 @@
     </div>
 
     <script>
-        // Inicializa os ícones Lucide
         lucide.createIcons();
 
-        // Configurações MQTT via WebSocket (Porta 8884 para SSL no HiveMQ)
         const BROKER = "broker.hivemq.com";
         const PORTA = 8884;
-        const TOPICO = "TIAGO";
+        const TOPICO = "gerry_sanchez_led_exclusivo/arduino";
         const CLIENT_ID = "web_client_" + Math.random().toString(16).substr(2, 8);
 
         let cliente = new Paho.MQTT.Client(BROKER, Number(PORTA), CLIENT_ID);
 
-        // Callbacks
+        // Estado local dos 3 LEDs
+        const estadoLeds = { 1: false, 2: false, 3: false };
+
         cliente.onConnectionLost = aoPerderConexao;
         cliente.onMessageArrived = aoChegarMensagem;
 
-        // Conectar ao Broker
         conectar();
 
         function conectar() {
@@ -126,32 +161,36 @@
         function aoConectarSucesso() {
             atualizarStatus("Conectado", "emerald");
             cliente.subscribe(TOPICO);
-            console.log("Inscrito no tópico: " + TOPICO);
         }
 
         function aoConectarFalha(responseObject) {
             atualizarStatus("Erro Conexão", "rose");
-            console.error("Falha ao conectar: " + responseObject.errorMessage);
-            setTimeout(conectar, 5000); // Tentar reconectar em 5 segundos
+            setTimeout(conectar, 5000);
         }
 
         function aoPerderConexao(responseObject) {
             atualizarStatus("Desconectado", "rose");
             if (responseObject.errorCode !== 0) {
-                console.warn("Conexão perdida: " + responseObject.errorMessage);
                 setTimeout(conectar, 3000);
             }
         }
 
         function aoChegarMensagem(message) {
-            const comando = message.payloadString.trim();
-            console.log("Mensagem recebida:", comando);
-            
-            if (comando === "1") {
-                atualizarInterfaceLED(true);
-            } else if (comando === "0") {
-                atualizarInterfaceLED(false);
-            }
+            const cmd = message.payloadString.trim();
+            tratarComando(cmd);
+        }
+
+        function alternarLED(num) {
+            // Se estiver ligado, envia o comando para desligar; caso contrário, para ligar.
+            // LED 1: '1' ON, '0' OFF
+            // LED 2: '2' ON, '3' OFF
+            // LED 3: '4' ON, '5' OFF
+            let cmd = "";
+            if (num === 1) cmd = estadoLeds[1] ? '0' : '1';
+            if (num === 2) cmd = estadoLeds[2] ? '3' : '2';
+            if (num === 3) cmd = estadoLeds[3] ? '5' : '4';
+
+            enviarComando(cmd);
         }
 
         function enviarComando(valor) {
@@ -159,27 +198,47 @@
                 const mensagem = new Paho.MQTT.Message(valor);
                 mensagem.destinationName = TOPICO;
                 cliente.send(mensagem);
-                atualizarInterfaceLED(valor === "1");
+                tratarComando(valor);
             } else {
                 alert("O cliente MQTT não está conectado ao broker!");
             }
         }
 
-        function atualizarInterfaceLED(ligado) {
-            const ledIndicator = document.getElementById("led-indicator");
-            const ledIcon = document.getElementById("led-icon");
-            const ledStatusText = document.getElementById("led-status-text");
+        function tratarComando(cmd) {
+            if (cmd === '1') atualizarInterfaceLED(1, true);
+            else if (cmd === '0') atualizarInterfaceLED(1, false);
+            else if (cmd === '2') atualizarInterfaceLED(2, true);
+            else if (cmd === '3') atualizarInterfaceLED(2, false);
+            else if (cmd === '4') atualizarInterfaceLED(3, true);
+            else if (cmd === '5') atualizarInterfaceLED(3, false);
+            else if (cmd === 'A') { // Ligar Todos
+                atualizarInterfaceLED(1, true);
+                atualizarInterfaceLED(2, true);
+                atualizarInterfaceLED(3, true);
+            } else if (cmd === 'D') { // Desligar Todos
+                atualizarInterfaceLED(1, false);
+                atualizarInterfaceLED(2, false);
+                atualizarInterfaceLED(3, false);
+            }
+        }
+
+        function atualizarInterfaceLED(num, ligado) {
+            estadoLeds[num] = ligado;
+
+            const indicator = document.getElementById(`led-indicator-${num}`);
+            const icon = document.getElementById(`led-icon-${num}`);
+            const statusText = document.getElementById(`led-status-${num}`);
 
             if (ligado) {
-                ledIndicator.className = "w-24 h-24 rounded-full bg-emerald-500 border-4 border-emerald-300 flex items-center justify-center transition-all duration-300 led-glow-on";
-                ledIcon.className = "w-10 h-10 text-white transition-colors duration-300";
-                ledStatusText.innerText = "LED Ligado";
-                ledStatusText.className = "text-sm font-bold text-emerald-400 uppercase tracking-wider";
+                indicator.className = "w-16 h-16 rounded-full bg-emerald-500 border-4 border-emerald-300 flex items-center justify-center transition-all duration-300 led-glow-on";
+                icon.className = "w-7 h-7 text-white transition-colors duration-300";
+                statusText.innerText = `LED ${num} ON`;
+                statusText.className = "text-xs font-bold text-emerald-400 uppercase";
             } else {
-                ledIndicator.className = "w-24 h-24 rounded-full bg-slate-800 border-4 border-slate-600 flex items-center justify-center transition-all duration-300 led-glow-off";
-                ledIcon.className = "w-10 h-10 text-slate-600 transition-colors duration-300";
-                ledStatusText.innerText = "LED Desligado";
-                ledStatusText.className = "text-sm font-medium text-slate-400 uppercase tracking-wider";
+                indicator.className = "w-16 h-16 rounded-full bg-slate-800 border-4 border-slate-600 flex items-center justify-center transition-all duration-300 led-glow-off";
+                icon.className = "w-7 h-7 text-slate-600 transition-colors duration-300";
+                statusText.innerText = `LED ${num} OFF`;
+                statusText.className = "text-xs font-bold text-slate-400 uppercase";
             }
         }
 
@@ -196,7 +255,7 @@
             } else if (cor === "rose") {
                 statusBadge.className = "flex items-center space-x-2 px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 border border-rose-500/20 text-xs font-semibold";
                 statusDot.className = "w-2 h-2 rounded-full bg-rose-400";
-            } else { // amber / default
+            } else {
                 statusBadge.className = "flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20 text-xs font-semibold";
                 statusDot.className = "w-2 h-2 rounded-full bg-amber-400 animate-pulse";
             }
