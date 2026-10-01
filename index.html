@@ -102,7 +102,7 @@
         // Configurações MQTT via WebSocket (Porta 8884 para SSL no HiveMQ)
         const BROKER = "broker.hivemq.com";
         const PORTA = 8884;
-        const TOPICO = "gerry_sanchez_led_exclusivo/arduino";
+        const TOPICO = "TIAGO";
         const CLIENT_ID = "web_client_" + Math.random().toString(16).substr(2, 8);
 
         let cliente = new Paho.MQTT.Client(BROKER, Number(PORTA), CLIENT_ID);
