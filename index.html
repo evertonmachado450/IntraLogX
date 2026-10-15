@@ -1,94 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Dashboard de Inspeção Geométrica IoT</title>
-  <!-- Biblioteca Paho MQTT para Navegador -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      text-align: center;
-      background-color: #eef2f5;
-      padding-top: 60px;
-    }
-    .card {
-      display: inline-block;
-      width: 380px;
-      padding: 30px;
-      border-radius: 15px;
-      background: white;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-    h2 {
-      color: #333;
-      margin-bottom: 5px;
-    }
-    p {
-      color: #666;
-      font-size: 14px;
-    }
-    .status-box {
-      font-size: 22px;
-      font-weight: bold;
-      margin-top: 25px;
-      padding: 20px;
-      border-radius: 10px;
-      color: white;
-      background-color: #6c757d;
-      transition: all 0.3s ease;
-    }
-    /* Estilização dinâmica por geometria */
-    .quadrado { background-color: #28a745; box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4); }
-    .circulo  { background-color: #007bff; box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4); }
-    .triangulo{ background-color: #fd7e14; box-shadow: 0 4px 12px rgba(253, 126, 20, 0.4); }
-    .nenhum   { background-color: #dc3545; box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel MQTT - Inspeção de Peças</title>
+    <!-- Lib Paho MQTT para Navegador -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            width: 320px;
+        }
+        h1 { color: #00e676; margin-top: 0; }
+        .val { font-size: 28px; font-weight: bold; color: #ffeb3b; margin: 15px 0; }
+        .status { font-size: 14px; color: #888; }
+    </style>
 </head>
 <body>
 
-  <div class="card">
-    <h2>Inspeção Geométrica</h2>
-    <p>Monitoramento IoT via HiveMQ WebSocket</p>
-    <div id="status" class="status-box nenhum">Aguardando peça...</div>
-  </div>
+    <div class="card">
+        <h1>Inspeção MQTT</h1>
+        <p>Forma Geométrica:</p>
+        <div id="forma" class="val">Aguardando...</div>
+        <p>Área Detectada:</p>
+        <div id="area" class="val">0 px</div>
+        <p class="status" id="status">Conectando ao Broker MQTT...</p>
+    </div>
 
-  <script>
-    // Conexão WSS (WebSocket Seguro) com o Broker HiveMQ na porta 8884
-    const client = new Paho.MQTT.Client("broker.hivemq.com", 8884, "web_client_" + Math.random());
+    <script>
+        // Configurações do Broker MQTT via WebSocket
+        const client = new Paho.MQTT.Client("test.mosquitto.org", 8081, "web_client_" + Math.random());
 
-    client.onConnectionLost = function (responseObject) {
-      console.log("Conexão perdida: " + responseObject.errorMessage);
-    };
+        client.onConnectionLost = onConnectionLost;
+        client.onMessageArrived = onMessageArrived;
 
-    client.onMessageArrived = function (message) {
-      const statusDiv = document.getElementById("status");
-      const forma = message.payloadString;
+        client.connect({
+            onSuccess: onConnect,
+            useSSL: true
+        });
 
-      if (forma === "QUADRADO") {
-        statusDiv.innerText = "Forma: Quadrado";
-        statusDiv.className = "status-box quadrado";
-      } else if (forma === "CIRCULO") {
-        statusDiv.innerText = "Forma: Círculo";
-        statusDiv.className = "status-box circulo";
-      } else if (forma === "TRIANGULO") {
-        statusDiv.innerText = "Forma: Triângulo";
-        statusDiv.className = "status-box triangulo";
-      } else {
-        statusDiv.innerText = "Sem Peça / Desconhecida";
-        statusDiv.className = "status-box nenhum";
-      }
-    };
+        function onConnect() {
+            document.getElementById("status").innerText = "Status: Conectado ao MQTT";
+            document.getElementById("status").style.color = "#00e676";
+            // Inscreve nos tópicos enviados pelo Python
+            client.subscribe("inspecao/visao/forma");
+            client.subscribe("inspecao/visao/area");
+        }
 
-    // Ativa SSL para compatibilidade com o HTTPS do GitHub Pages
-    client.connect({
-      useSSL: true,
-      onSuccess: function () {
-        console.log("Conectado ao HiveMQ via WebSocket Seguro!");
-        client.subscribe("escola/inspecao/geometria");
-      }
-    });
-  </script>
+        function onConnectionLost(responseObject) {
+            if (responseObject.errorCode !== 0) {
+                document.getElementById("status").innerText = "Status: Desconectado";
+                document.getElementById("status").style.color = "#ff5252";
+            }
+        }
+
+        function onMessageArrived(message) {
+            if (message.destinationName === "inspecao/visao/forma") {
+                document.getElementById("forma").innerText = message.payloadString;
+            }
+            if (message.destinationName === "inspecao/visao/area") {
+                document.getElementById("area").innerText = message.payloadString + " px";
+            }
+        }
+    </script>
 </body>
 </html>
-
